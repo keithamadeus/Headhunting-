@@ -70,6 +70,12 @@ const CandidateSearch = () => {
   }, []);
 
   const onPlus = async () => {
+    // record current candidate to local storage
+    const savedCandidates = JSON.parse(localStorage.getItem('savedCandidates') || '[]');
+    savedCandidates.push(currentCandidate);
+    localStorage.setItem('savedCandidates', JSON.stringify(savedCandidates));
+
+
     await parseCandidate(candidates[currentIndex]);
     // console.log('Plus button clicked');
   };
