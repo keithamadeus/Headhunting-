@@ -7,16 +7,10 @@ import type Candidate from "../interfaces/Candidate.interface";
 
 type CandidateCardProps = {
     candidate: Candidate;
-    onAdd?: (() => void) | null;
-    onView?: (() => void) | null;
-    onRemove?: (() => void) | null;
-
-    removeFromStorage?:
-        | ((
-            e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-            candidate: Candidate | null | undefined,
-        ) => void)
-        | null;
+    onPlus?: (() => void) | null;
+    // onView?: (() => void) | null;
+    onMinus?: (() => void) | null;
+    
 };
 
 const Card = styled.div`
@@ -55,10 +49,8 @@ const CardUsername = styled.p`
 
 const CandidateCard = ({
     candidate,
-    // onAdd,
-    // onView,
-    // onRemove,
-    // removeFromStorage,
+    onPlus,
+    onMinus,
 }: CandidateCardProps) => {
     console.log(candidate);
 
@@ -82,6 +74,10 @@ const CandidateCard = ({
                         <a href={candidate.html_url} target="_blank" rel="noreferrer">
                             View on GitHub
                         </a>
+                        <div className="card__actions">
+                            <button onClick={onMinus || (() => {})}>-</button>
+                            <button onClick={onPlus || (() => {})}>+</button>
+                           </div>
                     </CardBody>
                 </Card>
             ) : 
