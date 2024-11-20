@@ -60,9 +60,12 @@ const CandidateCard = ({
     // onRemove,
     // removeFromStorage,
 }: CandidateCardProps) => {
+    console.log(candidate);
+
+
     return (
         <>
-            {candidate?.name ? (
+            {candidate?.username ? (
                 <Card>
                     <CardHeader>
                         <CardAvatar
@@ -73,6 +76,12 @@ const CandidateCard = ({
                     </CardHeader>
                     <CardBody>
                         <CardUsername>{candidate.username}</CardUsername>
+                        <p>{candidate.location}</p>
+                        <p>{candidate.email}</p>
+                        <p>{candidate.company}</p>
+                        <a href={candidate.html_url} target="_blank" rel="noreferrer">
+                            View on GitHub
+                        </a>
                     </CardBody>
                 </Card>
             ) : 
