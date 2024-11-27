@@ -1,23 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import type Candidate from "../interfaces/Candidate.interface";
-// import { IoEyeOutline } from 'react-icons/io5';
-// import { ImCross } from 'react-icons/im';
-// import { CgPlayListAdd } from 'react-icons/cg';
 
 type CandidateCardProps = {
     candidate: Candidate;
     onPlus?: (() => void) | null;
-    // onView?: (() => void) | null;
     onMinus?: (() => void) | null;
-    
 };
 
 const Card = styled.div`
-    border: 1px solid #ccc;
     border-radius: 8px;
-    // padding: 150px;
-    margin: 16px;
+    // padding: 16px;
+    margin: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
@@ -31,7 +25,6 @@ const CardAvatar = styled.img`
     border-radius: 15% 15% 0 0;
     width: auto;
     height: 300px;
-    // margin-right: 16px;
 `;
 
 const CardName = styled.h2`
@@ -41,7 +34,6 @@ const CardName = styled.h2`
 
 const CardBody = styled.div`
     margin-top: 16px;
-    padding: 0px 24px;
 `;
 
 const CardUsername = styled.p`
@@ -49,14 +41,17 @@ const CardUsername = styled.p`
     color: #555;
 `;
 
+const CardActions = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+`;
+
 const CandidateCard = ({
     candidate,
     onPlus,
     onMinus,
 }: CandidateCardProps) => {
-    // console.log(candidate);
-
-
     return (
         <>
             {candidate?.username ? (
@@ -76,20 +71,20 @@ const CandidateCard = ({
                         <a href={candidate.html_url} target="_blank" rel="noreferrer">
                             View on GitHub
                         </a>
-                        <div className="card__actions">
+                        <CardActions>
                             <button 
                                 onClick={onMinus || (() => {})} 
-                                style={{ border: '1px solid red', borderRadius: '100%', backgroundColor: 'red' }}
+                                style={{ border: '1px solid red', borderRadius: '50%', backgroundColor: 'red', color: 'black' }}
                             >
                                 -
                             </button>
                             <button 
                                 onClick={onPlus || (() => {})}
-                                style={{ border: '1px solid green', borderRadius: '100%', backgroundColor: 'green' }}
+                                style={{ border: '1px solid green', borderRadius: '50%', backgroundColor: 'green', color: 'black' }}
                             >
                                 +
                             </button>
-                        </div>
+                        </CardActions>
                     </CardBody>
                 </Card>
             ) : 

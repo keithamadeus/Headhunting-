@@ -27,12 +27,12 @@ const SavedCandidates = () => {
             <td>
           <img src={candidate.avatar} alt={candidate.name} height="100px" />
             </td>
-            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.name}</td>
-            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.username}</td>
-            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.location}</td>
-            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.email}</td>
-            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.company}</td>
-            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>
+            <td style={{ padding: '5px', wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.name}</td>
+            <td style={{ padding: '5px', wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.username}</td>
+            <td style={{ padding: '5px', wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.location}</td>
+            <td style={{ padding: '5px', wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.email}</td>
+            <td style={{ padding: '5px', wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.company}</td>
+            <td style={{ padding: '5px', wordWrap: 'break-word', maxWidth: '150px' }}>
           <a href={candidate.html_url} target="_blank" rel="noreferrer">
             View on GitHub
           </a>
