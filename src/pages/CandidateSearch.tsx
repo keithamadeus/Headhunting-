@@ -3,22 +3,6 @@ import { searchGithub, searchGithubUser } from '../api/API';
 import Candidate from '../interfaces/Candidate.interface';
 import CandidateCard from '../components/Candidate.Card';
 
-// const dummyFirstAPICandidate:Candidate = {
-//   username: 'johndoe',
-// };
-
-
-
-// const dummyCandidate:Candidate = {
-//   name: 'John Doe',
-//   username: 'johndoe',
-//   location: 'New York, NY',
-//   avatar: 'https://avatars.githubusercontent.com/u/1?v=4',
-//   email: 'dummy@test.com',
-//   html_url: 'https://google.com',
-//   company: 'Google',
-// };
-
 const CandidateSearch = () => {
   const [currentCandidate, setCurrentCandidate] = useState<Candidate>({
     name: '',

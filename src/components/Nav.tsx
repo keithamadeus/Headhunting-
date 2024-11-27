@@ -7,12 +7,34 @@ const Nav = () => {
 
     return (
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Candidate Search</Link>
+        <ul style={{ display: 'flex', listStyleType: 'none', padding: 0 }}>
+          <li style={{ marginRight: '20px' }}>
+        <Link 
+          to="/" 
+          style={{ 
+            color: 'white', 
+            fontWeight: 'bold', 
+            textDecoration: 'none' 
+          }}
+          onMouseOver={(e) => e.currentTarget.style.color = 'lightgrey'}
+          onMouseOut={(e) => e.currentTarget.style.color = 'white'}
+        >
+          Candidate Search
+        </Link>
           </li>
           <li>
-            <Link to="/SavedCandidates">Saved Candidates</Link>
+        <Link 
+          to="/SavedCandidates" 
+          style={{ 
+            color: 'white', 
+            fontWeight: 'bold', 
+            textDecoration: 'none' 
+          }}
+          onMouseOver={(e) => e.currentTarget.style.color = 'lightgrey'}
+          onMouseOut={(e) => e.currentTarget.style.color = 'white'}
+        >
+          Saved Candidates
+        </Link>
           </li>
         </ul>
       </nav>
