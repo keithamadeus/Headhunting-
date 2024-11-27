@@ -4,8 +4,6 @@ const SavedCandidates = () => {
 
   const [candidates, setCandidates] = useState(JSON.parse(localStorage.getItem('savedCandidates') || '[]'));
 
-
-
   return (
     <>
       <h1>Potential Candidates</h1>
@@ -29,12 +27,12 @@ const SavedCandidates = () => {
             <td>
           <img src={candidate.avatar} alt={candidate.name} height="100px" />
             </td>
-            <td>{candidate.name}</td>
-            <td>{candidate.username}</td>
-            <td>{candidate.location}</td>
-            <td>{candidate.email}</td>
-            <td>{candidate.company}</td>
-            <td>
+            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.name}</td>
+            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.username}</td>
+            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.location}</td>
+            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.email}</td>
+            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>{candidate.company}</td>
+            <td style={{ wordWrap: 'break-word', maxWidth: '150px' }}>
           <a href={candidate.html_url} target="_blank" rel="noreferrer">
             View on GitHub
           </a>
@@ -54,7 +52,7 @@ const SavedCandidates = () => {
         ))
           ) : (
         <tr>
-            <td colSpan={8} style={{ textAlign: 'center', fontWeight: 'bold' }}>No candidates available</td>
+          <td colSpan={8} style={{ textAlign: 'center', fontWeight: 'bold' }}>No candidates available</td>
         </tr>
           )}
         </tbody>

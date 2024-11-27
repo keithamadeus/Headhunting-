@@ -16,21 +16,22 @@ type CandidateCardProps = {
 const Card = styled.div`
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 16px;
+    // padding: 150px;
     margin: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const CardHeader = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
 `;
 
 const CardAvatar = styled.img`
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 16px;
+    border-radius: 15% 15% 0 0;
+    width: auto;
+    height: 300px;
+    // margin-right: 16px;
 `;
 
 const CardName = styled.h2`
@@ -40,6 +41,7 @@ const CardName = styled.h2`
 
 const CardBody = styled.div`
     margin-top: 16px;
+    padding: 0px 24px;
 `;
 
 const CardUsername = styled.p`
@@ -52,7 +54,7 @@ const CandidateCard = ({
     onPlus,
     onMinus,
 }: CandidateCardProps) => {
-    console.log(candidate);
+    // console.log(candidate);
 
 
     return (
@@ -75,9 +77,19 @@ const CandidateCard = ({
                             View on GitHub
                         </a>
                         <div className="card__actions">
-                            <button onClick={onMinus || (() => {})}>-</button>
-                            <button onClick={onPlus || (() => {})}>+</button>
-                           </div>
+                            <button 
+                                onClick={onMinus || (() => {})} 
+                                style={{ border: '1px solid red', borderRadius: '100%', backgroundColor: 'red' }}
+                            >
+                                -
+                            </button>
+                            <button 
+                                onClick={onPlus || (() => {})}
+                                style={{ border: '1px solid green', borderRadius: '100%', backgroundColor: 'green' }}
+                            >
+                                +
+                            </button>
+                        </div>
                     </CardBody>
                 </Card>
             ) : 
